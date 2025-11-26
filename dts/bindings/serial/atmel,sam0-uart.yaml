@@ -1,5 +1,5 @@
 # Copyright (c) 2024 Gerson Fernando Budke <nandojve@gmail.com>
-# Copyright (c) 2025 Altronix (RS485 GPIO support)
+# Copyright (c) 2025 Altronix
 # SPDX-License-Identifier: Apache-2.0
 
 description: Atmel SAM0 SERCOM UART driver
