@@ -8,12 +8,6 @@
 
 #define DT_DRV_COMPAT atmel_sam0_uart
 
-/* Check if any UART instance has RS485 GPIO support */
-#if DT_ANY_INST_HAS_PROP_STATUS_OKAY(de_gpios) || \
-    DT_ANY_INST_HAS_PROP_STATUS_OKAY(re_gpios)
-#define UART_SAM0_RS485_SUPPORTED 1
-#endif
-
 #include <zephyr/device.h>
 #include <errno.h>
 #include <zephyr/init.h>
@@ -25,6 +19,12 @@
 #include <zephyr/drivers/gpio.h>
 #include <string.h>
 #include <zephyr/irq.h>
+
+/* Check if any UART instance has RS485 GPIO support */
+#if DT_ANY_INST_HAS_PROP_STATUS_OKAY(de_gpios) || \
+    DT_ANY_INST_HAS_PROP_STATUS_OKAY(re_gpios)
+#define UART_SAM0_RS485_SUPPORTED 1
+#endif
 
 /* clang-format off */
 
